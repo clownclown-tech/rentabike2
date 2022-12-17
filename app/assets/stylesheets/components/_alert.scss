@@ -1,6 +1,9 @@
 .alert {
+  background-color: whitesmoke;
+  color: red;
+  border-color: black;
   position: fixed;
-  bottom: 160px;
-  right: 160px;
+  bottom: 60px;
+  right: 60px;
   z-index: 1000;
 }
