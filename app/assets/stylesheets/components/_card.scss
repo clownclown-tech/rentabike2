@@ -32,12 +32,13 @@
 }
 
 .cardtext {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between;
   position: relative;
   gap: 50px;
+  margin: 0;
 }
 
 .card-booking {
