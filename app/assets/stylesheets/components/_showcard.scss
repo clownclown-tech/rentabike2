@@ -11,7 +11,7 @@
 .card-product img {
   height: 100%;
   width: 30%;
-  object-fit: fill;
+  object-fit: contain!important;
 }
 
 .card-product h2 {
@@ -21,14 +21,20 @@
 }
 
 .card-product p {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 30px;
   font-weight:bold;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 10px;
+}
+
+.cardtext-pos {
+  border-radius: 5px;
+  background-color: darkslategray;
+  background: rgba(0,0,0,0.5);
 }
