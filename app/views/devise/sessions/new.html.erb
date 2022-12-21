@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row justify-content-center">
+    <div>
+    <h2 style="font-weight: 900;font-size: 50px; font-family: 'Alex Brush', sans-serif;color: purple;" class="handwriting">Please log in, rent a bike!</h2>
+    </div>
     <div class="col-6">
-      <h2>Log in</h2>
+
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -24,3 +27,23 @@
     </div>
   </div>
 </div>
+
+<style>
+@import url('https://fonts.cdnfonts.com/css/alex-brush');
+
+.handwriting {
+  animation: handwriting 4s;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes handwriting {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+</style>
