@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
   end
 
   def show
-    # code to retrieve the message object
     render 'show'
   end
 
