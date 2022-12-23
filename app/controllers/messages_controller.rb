@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    @smessages = Message.where(sender: current_user)
-    @rmessages = Message.where(receiver: current_user)
+    @smessages = Message.where(sender: current_user.id)
+    @rmessages = Message.where(receiver: current_user.first_name)
   end
 
   def new
@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.sender = current_user
+    @message.sender = current_user.id
     if @message.save
       redirect_to @message
     else
