@@ -1,5 +1,5 @@
-<h1>Messages</h1>
-<% if @messages.blank? %>
+<h1>received Messages</h1>
+<% if @rmessages.blank? %>
     <p>No received messages, sent a message, even to yourself</p>
     <a class="btn btn-light" href="/messages/new">sent a message</a>
 <% else %>
@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @messages.each do |message| %>
+    <% @rmessages.each do |message| %>
       <tr>
         <td><%= message.subject %></td>
         <td><%= message.body %></td>
@@ -27,6 +27,37 @@
     <% end %>
   </tbody>
 </table>
+
+<h1>sent Messages</h1>
+<% if @smessages.blank? %>
+    <p>No sent messages, sent a message, even to yourself</p>
+    <a class="btn btn-light" href="/messages/new">sent a message</a>
+<% else %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smessages.each do |message| %>
+      <tr>
+        <td><%= message.subject %></td>
+        <td><%= message.body %></td>
+        <%#= link_to 'Show', message %>
+        <td><%= link_to 'answer', new_message_path %></td>
+        <td><%= link_to "delete", message_path(message), method: :delete, data: { confirm: "Are you sure you want to delete this message?" } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
 
 <br>
 

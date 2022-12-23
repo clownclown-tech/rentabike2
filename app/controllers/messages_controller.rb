@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
+    @smessages = Message.where(sender: current_user)
+    @rmessages = Message.where(receiver: current_user)
   end
 
   def new
@@ -9,6 +10,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.sender = current_user
     if @message.save
       redirect_to @message
     else
@@ -31,6 +33,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:subject, :body)
+    params.require(:message).permit(:receiver, :subject, :body)
   end
 end
