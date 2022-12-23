@@ -17,7 +17,16 @@ class MessagesController < ApplicationController
   end
 
   def show
+    # code to retrieve the message object
+    render 'show'
   end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    redirect_to messages_path, notice: "Message was successfully deleted."
+  end
+
 
   private
 
