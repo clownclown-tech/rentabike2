@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :update]
 
+  namespace :api do
+    resources :users, only: [:index, :create, :show, :update, :destroy]
+  end
+
+  resources :messages
+
+
   # get "bikes/new", to: "bikes#new", as: :new_bike
   # post "bikes/", to: "bikes#create"
   # get "bikes/:id/edit", to: "bikes#edit", as: :edit_bike
