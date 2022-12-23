@@ -19,8 +19,10 @@
       <tr>
         <td><%= message.subject %></td>
         <td><%= message.body %></td>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
+        <%#= link_to 'Show', message %>
+        <td><%= link_to 'answer', new_message_path %></td>
+        <td><%= link_to "delete", message_path(message), method: :delete, data: { confirm: "Are you sure you want to delete this message?" } %></td>
+
       </tr>
     <% end %>
   </tbody>
