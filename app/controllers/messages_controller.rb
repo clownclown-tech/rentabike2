@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @receiver = params[:receiver]
     @message = Message.new(message_params)
     @message.sender = current_user.id
     if @message.save

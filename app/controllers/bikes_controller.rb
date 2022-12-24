@@ -40,6 +40,8 @@ class BikesController < ApplicationController
   end
 
   def show
+    user = User.where(id: @bike.user_id).first
+    @name = user.first_name
   end
 
   def update
