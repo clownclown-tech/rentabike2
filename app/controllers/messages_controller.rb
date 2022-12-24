@@ -1,17 +1,18 @@
 class MessagesController < ApplicationController
   def index
-    @smessages = Message.where(sender: current_user.id)
+    @smessages = Message.where(sender: current_user.first_name)
     @rmessages = Message.where(receiver: current_user.first_name)
   end
 
   def new
     @message = Message.new
+    @receiver = params[:message_value]
   end
 
   def create
-    @receiver = params[:receiver]
+    #@receiver = params[:receiver]
     @message = Message.new(message_params)
-    @message.sender = current_user.id
+    @message.sender = current_user.first_name
     if @message.save
       redirect_to @message
     else
