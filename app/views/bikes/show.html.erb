@@ -16,7 +16,7 @@
     <p><%= @bike.location%></p>
     <p><%= @bike.year%></p>
     <h2><%= @bike.price%> €</h2>
-    <%= link_to 'sent him Message', new_message_path(receiver: @name) %>
+    <%= link_to 'sent a Message', new_message_path(message_value: @name), class: "btn" %>
 
   </div>
 </div>

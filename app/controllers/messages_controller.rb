@@ -10,11 +10,14 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @receiver = params[:message_value]
+
     #@receiver = params[:receiver]
     @message = Message.new(message_params)
     @message.sender = current_user.first_name
     if @message.save
-      redirect_to @message
+      redirect_to messages_path, notice: "Message sent."
+
     else
       render 'new'
     end
@@ -35,6 +38,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:receiver, :subject, :body)
+    params.require(:message).permit(:receiver, :subject, :body, :message_value)
   end
 end
