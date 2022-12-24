@@ -2,7 +2,7 @@
 
 <%= simple_form_for @message do |f| %>
   <%#= f.input :sender %>
-  <%= f.input :receiver %>
+  <%= f.input :receiver, value: @receiver  %>
   <%= f.input :subject %>
   <%= f.input :body, as: :text %>
 
@@ -10,3 +10,4 @@
 <% end %>
 
 <%= link_to 'Back', messages_path %>
+<%= puts @receiver %>

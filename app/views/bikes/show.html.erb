@@ -7,11 +7,17 @@
   <% end %>
   <div class="card-product-infos">
     <h1><%= @bike.name%></h1>
+        <h1><%#= @bike.user_id%></h1>
+        <p>offered by: <%= @name %></p>
+
+
     <h2><%= @bike.model%></h2>
     <p><%= @bike.description%></p>
     <p><%= @bike.location%></p>
     <p><%= @bike.year%></p>
-    <h2><%= @bike.price%>€</h2>
+    <h2><%= @bike.price%> €</h2>
+    <%= link_to 'sent him Message', new_message_path(receiver: @name) %>
+
   </div>
 </div>
 
