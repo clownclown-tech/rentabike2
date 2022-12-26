@@ -1,5 +1,5 @@
 <div class= "container">
-  <h1>Bookings</h1>
+  <h3>Bookings you asked for:</h3>
   <% if @bookings.blank? %>
     <p>Book your first bike!</p>
   <% else %>
@@ -11,28 +11,38 @@
           <p class="fw-light">Start Date: <%= booking.start.strftime("%b %d, %Y") %></p>
           <p class="fw-light">End Date: <%= booking.end.strftime("%b %d, %Y") %></p>
           <p class="fw-bold"><%= booking.bike.price %> €</p>
+
+
+          <% if booking.confirmation == true %>
+            <p style="color: red;font-weight: bold;">confirmed</p>
+          <% else %>
+            <p> confirmation pending </p>
+          <% end %>
+          <% end %>
+
         </div>
-        <% end %>
       </li>
     </ul>
     <% end %>
 </div>
 
 <div class= "container">
-  <h1>Offers</h1>
+  <h3>Bookings you got asked for:</h3>
    <div class= "cards-confirmation">
     <% if @my_bookings.blank? %>
       <p>You don't have any bookings yet</p>
     <% else %>
       <% @my_bookings.each do |my_booking| %>
         <% my_booking.each do |booking|%>
-          <div class= "card-confirmation">
+          <div class= "card-confirmation" style="border: 1px solid darkgray;">
             <div>
-              <h3><%= booking.bike.name %></h3>
+              <h4><%= booking.bike.name %></h4>
               <p>Booked by <%= booking.user.first_name %></p>
               <p>From <%= booking.start.strftime("%b %d, %Y") %> to <%= booking.end.strftime("%b %d, %Y") %></p>
               <% if booking.confirmation == false %>
                 <%= link_to "Accept", booking_path(booking), method: :patch, class:"btn btn-confirmation"%>
+              <% else %>
+                <p style="color: red;font-weight: bold;">confirmed Booking</p>
               <% end %>
             </div>
           </div>
