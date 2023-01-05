@@ -42,6 +42,13 @@ class BikesController < ApplicationController
   def show
     user = User.where(id: @bike.user_id).first
     @name = user.first_name
+    @marker = [lat: 3.233, lng: 2.233]
+      @markers = [{
+        lat: @bike.latitude,
+        lng: @bike.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bike: @bike }),
+        image_url: helpers.asset_url("bikeicon.png")
+      }]
   end
 
   def update

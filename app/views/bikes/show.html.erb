@@ -24,12 +24,19 @@
 <br>
 
  <%# <div class="btn"><%= link_to "home", bikes_path, class: "nav-link" %>
-<div class="btn btn-light"><%= link_to "book this", new_bike_booking_path(@bike), class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-light"><%= link_to "book this", new_bike_booking_path(@bike), class: "text-decoration-none text-black" %></div>
 <% if @bike.user == current_user %>
-<div class="btn btn-light"><%= link_to "edit", edit_bike_path(@bike), class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-light"><%= link_to "edit", edit_bike_path(@bike), class: "text-decoration-none text-black" %></div>
 <% end %>
 <% if @bike.user == current_user %>
-<div class="btn btn-light"><%= link_to "delete", bike_path(@bike), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-light"><%= link_to "delete", bike_path(@bike), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-black" %></div>
 <% end %>
+
+  <div style="width: 100%; height: 600px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); border-style: solid; border-color: #F4F4F4"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <%= @markers.inspect %>
  <%# render/bookings %>
 </div>
