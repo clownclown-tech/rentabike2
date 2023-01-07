@@ -32,11 +32,13 @@
   <div class="btn btn-light"><%= link_to "delete", bike_path(@bike), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-black" %></div>
 <% end %>
 
+<br><br>
+
   <div style="width: 100%; height: 600px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); border-style: solid; border-color: #F4F4F4"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <%= @markers.inspect %>
+  <%#= @markers.inspect %>
  <%# render/bookings %>
 </div>
