@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @smessages = Message.where(sender: current_user.first_name)
     @rmessages = Message.where(receiver: current_user.first_name)
+    @data = Message.find(1)
   end
 
   def new
@@ -12,7 +13,7 @@ class MessagesController < ApplicationController
   def create
     @receiver = params[:message_value]
 
-    #@receiver = params[:receiver]
+    # @receiver = params[:receiver]
     @message = Message.new(message_params)
     @message.sender = current_user.first_name
     if @message.save
@@ -24,7 +25,9 @@ class MessagesController < ApplicationController
   end
 
   def show
-    render 'show'
+    # Retrieve the data that you want to display in the pop-up window
+    @data = Message.find(params[:id])
+    # render 'show'
   end
 
   def destroy
@@ -37,6 +40,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:receiver, :subject, :body, :message_value)
+    params.require(:message).permit(:receiver, :subject, :body, :message_value, :id)
   end
 end
