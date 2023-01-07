@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   def index
     @smessages = Message.where(sender: current_user.first_name)
     @rmessages = Message.where(receiver: current_user.first_name)
-    @data = Message.find(1)
   end
 
   def new
@@ -36,10 +35,9 @@ class MessagesController < ApplicationController
     redirect_to messages_path, notice: "Message was successfully deleted."
   end
 
-
   private
 
   def message_params
-    params.require(:message).permit(:receiver, :subject, :body, :message_value, :id)
+    params.require(:message).permit(:receiver, :subject, :body, :message_value)
   end
 end
