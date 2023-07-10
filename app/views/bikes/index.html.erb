@@ -14,8 +14,8 @@
         placeholder: "search for a location"
       %>
       <div>
-        <%= button_tag(type: "submit", class: "btn btn-default") do %>
-          <i class="fas fa-search"></i>
+        <%= button_tag(type: "submit", class: "search-button") do %>
+          <i class="fas fa-search" ></i>
         <% end %>
       </div>
 
@@ -49,3 +49,22 @@
       <%#= @markers.inspect %>
 
 </div>
+
+
+<style>
+.search-button {
+  margin: 5px;
+  background-color: lightgray; /* Default background color */
+  color: rgba(0, 0, 0, 0.55); /* Default text color */
+  border: none; /* Remove border */
+  border-radius: 10px;
+  padding: 8px 16px; /* Adjust padding as needed */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.search-button:hover {
+  background-color: #ff00ea; /* Background color on hover */
+  color: rgba(0, 0, 0, 0.55); /* Text color on hover */
+}
+
+</style>
