@@ -1,8 +1,7 @@
-<div class="banner" style="border-bottom: 1px solid 	#909090; background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://images.unsplash.com/photo-1621394445346-c7b502f07206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80);">
+<div class="banner" style="// border-bottom: 1px solid 	#909090; background-image: linear-gradient(rgba(0,255,6,7.0),rgba(0,0,0,0.0))">
   <div class= "hero">
-    <h1>RENT A BIKE</h1>
-     <p>Have an additional bike? Get some extra income listing a bike!</p>
-    <a class="btn btn-light" href="/bikes/new">List your bike</a>
+    <h1 style="color:#ff00ea">RENT A BIKE!</h1>
+     <p style="color:#0007a3">you have a wide variaty of bikes in berlin, <br>choose your bike and ask for a booking</p>
   </div>
 </div>
 
@@ -12,7 +11,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control col-md-4 col-md-offset-4",
-        placeholder: "Search a bike..."
+        placeholder: "search for a location"
       %>
       <div>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
