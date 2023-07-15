@@ -16,7 +16,7 @@
     <p><%= @bike.location%></p>
     <p><%= @bike.year%></p>
     <h2><%= @bike.price%> €</h2>
-    <%= link_to 'sent a Message', new_message_path(message_value: @name), class: "btn" %>
+    <%= link_to 'sent a Message', new_message_path(message_value: @name), class: "btn btn-secondary" %>
 
   </div>
 </div>
@@ -24,12 +24,12 @@
 <br>
 
  <%# <div class="btn"><%= link_to "home", bikes_path, class: "nav-link" %>
-  <div class="btn btn-secondary"><%= link_to "book this", new_bike_booking_path(@bike), class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-secondary"><%= link_to "book this", new_bike_booking_path(@bike), class: "text-decoration-none text-white" %></div>
 <% if @bike.user == current_user %>
-  <div class="btn btn-secondary"><%= link_to "edit", edit_bike_path(@bike), class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-secondary"><%= link_to "edit", edit_bike_path(@bike), class: "text-decoration-none text-white" %></div>
 <% end %>
 <% if @bike.user == current_user %>
-  <div class="btn btn-secondary"><%= link_to "delete", bike_path(@bike), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-black" %></div>
+  <div class="btn btn-secondary"><%= link_to "delete", bike_path(@bike), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-white" %></div>
 <% end %>
 
 <br><br>

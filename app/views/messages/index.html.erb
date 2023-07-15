@@ -13,7 +13,7 @@
 <h1>received Messages</h1>
 <% if @rmessages.blank? && @smessages.blank? %>
     <p>No received messages, sent a message, even to yourself</p>
-    <a class="btn btn-light" href="/messages/new">sent a message</a>
+    <a class="btn btn-dark" href="/messages/new">sent a message</a>
 <% else %>
 
 <table>
@@ -52,7 +52,7 @@
 <h1>sent Messages</h1>
 <% if @smessages.blank? %>
     <p>No sent messages, sent a message, even to yourself</p>
-    <a class="btn btn-light" href="/messages/new">sent a message</a>
+    <a class="btn btn-dark" href="/messages/new">sent a message</a>
 <% else %>
 
 <table>
