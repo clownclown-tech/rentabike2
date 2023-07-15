@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row justify-content-center">
+
+    <div class="col-4">
     <div>
-    <h2 style="font-weight: 900;font-size: 50px; font-family: 'Alex Brush', sans-serif;color: purple;" class="handwriting">Please log in, rent a bike!</h2>
+    <h2 style="font-weight: 900;font-size: 50px; font-family: 'Helvetica', sans-serif;color: black;" class="flash-animation">please log in, rent a bike!</h2>
     </div>
-    <div class="col-6">
 
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,8 +20,9 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class: 'btn'%>
+          <%= f.button :submit, "Log in", class: 'btn btn-primary'%>
         </div>
+        <br>
       <% end %>
 
       <%= render "devise/shared/links" %>
@@ -29,6 +31,19 @@
 </div>
 
 <style>
+
+a {
+  color: black;
+  text-decoration-color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  font-weight: 650;
+  /* Add more hover styles as needed */
+}
+
 @import url('https://fonts.cdnfonts.com/css/alex-brush');
 
 .handwriting {
@@ -45,5 +60,22 @@
   100% {
     width: 100%;
   }
+}
+
+
+@keyframes flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flash-animation {
+  animation: flashing 1s ease-in-out 3;
 }
 </style>
