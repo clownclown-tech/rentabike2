@@ -9,7 +9,7 @@
 </script>
 
 
-
+<div class="container">
 <h1>received Messages</h1>
 <% if @rmessages.blank? && @smessages.blank? %>
     <p>No received messages, sent a message, even to yourself</p>
@@ -23,7 +23,7 @@
       <th>Body</th>
       <th>sent by:</th>
       <th></th>
-      <th></th>
+
     </tr>
   </thead>
 
@@ -61,7 +61,7 @@
       <th>Subject</th>
       <th>Body</th>
       <th>sent to:</th>
-      <th></th>
+
     </tr>
   </thead>
 
@@ -85,6 +85,8 @@
 <%= link_to 'New Message', new_message_path, class: 'btn btn-primary newm' %>
 
 <% end %>
+
+</div>
 
 
 
