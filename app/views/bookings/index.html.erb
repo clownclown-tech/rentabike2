@@ -40,7 +40,7 @@
               <p>Booked by <%= booking.user.first_name %></p>
               <p>From <%= booking.start.strftime("%b %d, %Y") %> to <%= booking.end.strftime("%b %d, %Y") %></p>
               <% if booking.confirmation == false %>
-                <%= link_to "Accept", booking_path(booking), method: :patch, class:"btn btn-confirmation"%>
+                <%= link_to "Accept", booking_path(booking), method: :patch, class:"btn btn-secondary"%>
               <% else %>
                 <p style="color: red;font-weight: bold;">confirmed Booking</p>
               <% end %>
@@ -51,6 +51,6 @@
     <% end %>
   </div>
 
-  <div class="btn btn-dark"><%= link_to "Back to home", root_path, class:"text-decoration-none text-white" %></div>
+  <div class="btn btn-primary"><%= link_to "Back to home", root_path, class:"text-decoration-none text-white" %></div>
 
 </div>
