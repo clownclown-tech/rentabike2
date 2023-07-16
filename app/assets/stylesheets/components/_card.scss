@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   grid-gap: 16px;
   margin: 30px;
@@ -69,11 +69,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  margin: 25px;
+  margin: 25px 25px;
 }
 
 .card-confirmation {
-  margin-left: 22px;
+
   padding: 18px;
   background-color: white;
   border-radius: 8px;
