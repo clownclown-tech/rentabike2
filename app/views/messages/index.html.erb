@@ -1,19 +1,9 @@
 
-<script>
-  $(document).on('turbolinks:load', function() {
-    $('#object-link').click(function(event) {
-      event.preventDefault();
-      window.open($(this).attr('href'), 'Pop-up Window', 'height=500,width=500');
-    });
-  });
-</script>
-
-
 <div class="container">
 <h1>received Messages</h1>
 <% if @rmessages.blank? && @smessages.blank? %>
     <p>No received messages, sent a message, even to yourself</p>
-    <a class="btn btn-dark" href="/messages/new">sent a message</a>
+    <a class="btn btn-secondary" href="/messages/new">sent a message</a>
 <% else %>
 
 <table>
@@ -22,6 +12,7 @@
       <th>Subject</th>
       <th>Body</th>
       <th>sent by:</th>
+      <th></th>
       <th></th>
 
     </tr>
@@ -32,12 +23,12 @@
       <tr>
         <td><%= message.subject %></td>
 
-       <!-- <td><%= message.body %> <br><%= button_to "View Message", message_path(message), method: :get, class: "btn btn-secondary btn-sm" %></td> -->
+        <td><%= message.body %> <br><%= button_to "View Message", message_path(message), method: :get, class: "btn btn-secondary btn-sm" %></td>
 
 
 
         <td><%= message.sender %></td>
-        <%#= link_to 'Show', message %>
+
         <td><%= link_to 'answer', new_message_path(message_value: message.sender), class: "btn btn-secondary btn-sm" %></td>
         <td><%= link_to "delete", message_path(message), method: :delete, data: { confirm: "Are you sure you want to delete this message?" }, class: "btn btn-secondary btn-sm" %></td>
 
@@ -61,6 +52,7 @@
       <th>Subject</th>
       <th>Body</th>
       <th>sent to:</th>
+      <th></th>
 
     </tr>
   </thead>
@@ -69,8 +61,8 @@
     <% @smessages.each do |message| %>
       <tr>
         <td><%= message.subject %></td>
-        <!-- <td><%= message.body %><%= button_to "View Message", message_path(message), method: :get, class: "btn btn-secondary btn-sm" %></td> -->
-        <%#= link_to 'Show', message %>
+        <td><%= message.body %><%= button_to "View Message", message_path(message), method: :get, class: "btn btn-secondary btn-sm" %></td>
+
         <td><%= message.receiver %></td>
         <td><%= link_to "delete", message_path(message), method: :delete, data: { confirm: "Are you sure you want to delete this message?" }, class: 'btn btn-secondary btn-sm' %></td>
 
