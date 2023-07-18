@@ -8,8 +8,9 @@
   <%= f.input :subject %>
   <%= f.input :body, as: :text %>
 
-  <%= f.button :submit, value: "sent Message" %>
+  <%= f.button :submit, value: "sent Message", class: "btn btn-secondary" %>
 <% end %>
+<br>
 
-<%= link_to 'Back', messages_path, class: "btn" %>
+<%= link_to 'Back', messages_path, class: "btn btn-secondary" %>
 </div>

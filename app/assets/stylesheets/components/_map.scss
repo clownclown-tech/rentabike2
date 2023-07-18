@@ -4,6 +4,7 @@
 
 .mapboxgl-popup-content {
   // border-radius: 5px;
+
   text-align: center;
   font-family: "Open Sans", sans-serif;
   border: 1px solid #929292;
@@ -16,4 +17,8 @@
   font-family: Tahoma, Verdana, sans-serif;
   color: #c3c3c3;
   font-weight: bold;
+}
+
+.mapboxgl-map {
+  margin-top: 25px;
 }
