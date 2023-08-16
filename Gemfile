@@ -5,7 +5,6 @@ ruby '3.0.3'
 
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.6.1"
-gem "simple_form", github: 'heartcombo/simple_form'
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -30,9 +29,10 @@ gem "geocoder"
 
 
 gem 'devise'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -43,9 +43,6 @@ gem 'pg_search', '~> 2.3.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form', github: 'heartcombo/simple_form'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -77,3 +74,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.10"
+
+gem "sentry-rails", "~> 5.10"
+
+gem "net-smtp", "~> 0.3.3", :require => false
+
+gem "net-imap", "~> 0.3.7", :require => false
+
+gem "net-pop", "~> 0.1.2", :require => false
