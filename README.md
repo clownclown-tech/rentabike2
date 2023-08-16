@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Ruby on Rails App for renting bikes, browse a whole catalogue of bikes (PostgreSQL Database), offer, rent and localize a bikes (OpenStreetMap API), sent messages and confirm bookings with members of the platform.
+
+https://rent-a-bike.herokuapp.com
