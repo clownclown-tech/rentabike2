@@ -26,3 +26,29 @@ body {
 p {
   margin-bottom: 0;
 }
+
+
+.alert, .flash, .flash-notice, .flash-alert {
+  justify-content: center;
+
+z-index: 1;
+position: fixed;
+font-size: 1rem;
+font-weight: 500;
+background-color: rgb(22, 22, 22);
+color: rgb(255, 255, 255);
+border: none;
+border-radius: 0.5rem;
+padding: 0.75rem 1.25rem;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 0.125rem 0.75rem;
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+max-width: 37.5rem;
+opacity: 1;
+transition: opacity 400ms;
+}
+
+.btn-close {
+  width: 0;
+}
