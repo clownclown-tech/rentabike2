@@ -15,16 +15,17 @@
             height: 100%;
             display: grid;
             grid-template-columns: repeat(9, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
         }
         .tile {
             background-image: url('app/assets/images/Bike_icon.png');
-            background-size: cover;
-            animation: rotate 1s linear infinite;
+            background-size: 100%;
+            animation: rotate 0.7s linear infinite;
+            margin: 20px;
         }
         @keyframes rotate {
-            0% { transform: rotate(45deg); }
-            100% { transform: rotate(405deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -54,7 +55,7 @@
             rotating = !rotating;
         }
 
-        setInterval(toggleRotation, 1000); // Toggle every 10 seconds
+        setInterval(toggleRotation, 500); // Toggle every 10 seconds
     </script>
 </body>
 </html>

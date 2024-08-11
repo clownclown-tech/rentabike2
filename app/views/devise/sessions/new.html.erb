@@ -4,7 +4,7 @@
     <div class="">
     <div>
     <br>
-    <h2 style="font-weight: 900;font-size: 50px; font-family: 'Helvetica', sans-serif;color: black;" class="">Please log in, rent a bike!</h2>
+    <h2 style="font-weight: 900;font-size: 50px; font-family: 'Helvetica', sans-serif;color: black;" class="text-blur-out">Please log in, rent a bike!</h2>
     <br>
     </div>
 
@@ -78,4 +78,8 @@ a:hover {
 .flash-animation {
   animation: flashing 1s ease-in-out 3;
 }
+
+
+body {animation:text-blur-out 1.2s cubic-bezier(.55,.085,.68,.53) reverse both}
+@keyframes text-blur-out{0%{filter:blur(.01)}100%{filter:blur(12px) opacity(0)}}
 </style>
