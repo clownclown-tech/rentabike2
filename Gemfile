@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+# ruby '3.3.10'
+ruby '3.3.8'
 
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.6.1"
@@ -45,6 +46,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 
 group :development, :test do
+  gem 'pry', '~> 0.14.0'  # <- Diese Zeile hinzufügen
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.0.3
+ARG RUBY_VERSION=3.3
 FROM ruby:$RUBY_VERSION-slim as base
 
 LABEL fly_launch_runtime="rails"
@@ -24,7 +24,7 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install Node.js
-ARG NODE_VERSION=16.13.1
+ARG NODE_VERSION=20.11.1
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
@@ -62,7 +62,8 @@ COPY --link . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE=DUMMY ./bin/rails assets:precompile
+# RUN SECRET_KEY_BASE=DUMMY ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE=DUMMY NODE_OPTIONS='--openssl-legacy-provider' ./bin/rails assets:precompile
 
 
 # Final stage for app image
